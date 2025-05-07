@@ -1,0 +1,405 @@
+
+/* === DASHBOARD WRAPPER === */
+.employee-dashboard {
+  max-width: 1200px;
+  margin: auto;
+  padding: 2rem;
+}
+
+/* === HEADER === */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 600;
+}
+.add-btn {
+  display: inline-flex; /* Use inline-flex for aligning items horizontally */
+  align-items: center;  /* Vertically center the items */
+  justify-content: center; /* Center the content horizontally */
+  padding: 8px 16px;  /* Add padding for better spacing */
+  background-color: #4CAF50; /* Example background color */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px; /* Adjust font size */
+}
+
+.add-btn svg {
+  margin-right: 8px; /* Add space between the icon and text */
+  display: inline-block; /* Ensure the icon behaves as inline-block */
+}
+
+/* === BUTTONS === */
+.add-btn,
+.sort-btn,
+.page-btn,
+.delete-btn,
+.cancel-btn {
+  background-color: #013E31;
+  color: white;
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.add-btn:hover,
+.sort-btn:hover,
+.page-btn:hover,
+.delete-btn:hover,
+.cancel-btn:hover {
+  background-color: #013E31;
+}
+
+/* === INPUTS === */
+.search-input {
+  padding: 0.5rem 1rem;
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.sort-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* === EMPLOYEE GRID === */
+.employee-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem; /* Proper gap between cards */
+}
+
+/* === EMPLOYEE CARD === */
+.employee-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+  margin-bottom: 1.5rem; /* Ensures spacing between cards */
+}
+
+/* No hover animation */
+.employee-card:hover {
+  transform: none;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.delete-button {
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #d9534f;
+}
+
+.delete-button:hover {
+  color: #c9302c;
+}
+
+/* === NOTES === */
+.notes {
+  margin-top: 1rem;
+  background: #f9f9f9;
+  padding: 0.75rem;
+  border-radius: 6px;
+}
+
+.note {
+  border-left: 3px solid #013E31;
+  padding-left: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* === OVERDUE DATE === */
+.overdue {
+  color: red;
+  font-weight: bold;
+}
+
+/* === PAGINATION === */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  gap: 0.5rem;
+}
+
+/* === FORM === */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  padding: 1rem;
+  border-radius: 10px;
+  max-width: 500px;
+  margin: auto;
+}
+
+.form input[type="text"],
+.form input[type="date"],
+.form input[type="email"],
+.form input {
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 100%;
+}
+
+.form button {
+  background-color: #28a745;
+  color: white;
+  padding: 0.7rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.form button:hover {
+  background-color: #218838;
+}
+
+/* === MODAL === */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* === DELETE CONFIRMATION === */
+.delete-confirm {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 400px;
+  text-align: center;
+}
+
+.delete-actions {
+  margin-top: 1.2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .sort-buttons {
+    flex-direction: column;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+}
+
+input,
+textarea,
+button {
+  font-size: 1rem;
+}
+
+/* Employee Card */
+.employee-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  margin-bottom: 20px;
+  max-width: 600px;
+  width: 100%;
+  /* Removed hover animation */
+}
+
+.employee-card:hover {
+  /* No hover animation */
+  transform: none;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-header h3 {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.delete-button {
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #e74c3c;
+  transition: color 0.2s ease;
+}
+
+.delete-button:hover {
+  color: #c0392b;
+}
+
+.employee-card p {
+  margin: 6px 0;
+}
+
+.overdue {
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+/* Form Styles */
+.form,
+.note-form {
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  max-width: 600px;
+  width: 100%;
+  /* Removed unnecessary left padding */
+  padding-left: 0; /* Ensure no padding on the left */
+}
+
+/* Adjust input and textarea inside the note form */
+.note-form input,
+.note-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+  transition: border 0.3s ease;
+}
+
+/* Focus state for input and textarea */
+.note-form input:focus,
+.note-form textarea:focus {
+  border-color: #81c408;
+  outline: none;
+}
+
+/* Button */
+button[type="submit"] {
+  background-color: #013e31;
+  color: white;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #6fa206;
+}
+
+/* Notes Section */
+.notes {
+  margin-top: 20px;
+}
+
+.note {
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+}
+
+/* Modal Overlay (Back Layer) */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(17, 17, 17, 0.6);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Modal Box */
+.modal-content {
+  position: relative;
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 16px;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* soft shadow only on modal */
+  z-index: 1001;
+  animation: slideIn 0.3s ease-in-out;
+}
+
+/* Close Button */
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #999;
+  transition: color 0.2s ease;
+}
+
+.modal-close:hover {
+  color: #e53935;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

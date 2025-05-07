@@ -1,0 +1,105 @@
+.notes-page {
+    padding: 20px;
+    margin: 0 auto;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  .loading,
+  .error {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #ff0000;
+  }
+  
+  .note-form {
+    margin-top: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 16px;
+  }
+  
+  label {
+    font-size: 1rem;
+    color: #555;
+    display: block;
+    margin-bottom: 8px;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  .select,
+  .textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .select {
+    height: 40px;
+  }
+  
+  .textarea {
+    height: 150px;
+    resize: none;
+  }
+  
+  .add-note-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #013e31;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .add-note-btn:hover {
+    background-color: #001c16;
+  }
+  
+  .notes-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-top: 30px;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  .notes-list {
+    margin-top: 20px;
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .note-item {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .note-date {
+    font-weight: bold;
+    color: #555;
+  }
+  
+  .note-content {
+    color: #333;
+    margin-top: 8px;
+  }

@@ -1,0 +1,86 @@
+.performance-container {
+    padding: 40px 20px;
+  }
+  
+  .performance-title {
+    font-size: 32px;
+    margin-bottom: 30px;
+    font-weight: 600;
+    color: #1f1f1f;
+    text-align: center;
+  }
+  
+  .performance-employee-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+  }
+  
+  .performance-employee-card {
+    background-color: #ffffff;
+    padding: 25px 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    width: 280px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .performance-employee-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 30px rgba(0, 0, 0, 0.08);
+  }
+  
+  .performance-employee-name {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #2d2d2d;
+  }
+  
+  .performance-employee-department,
+  .performance-employee-rating {
+    font-size: 14px;
+    color: #757575;
+    margin-bottom: 6px;
+  }
+  
+  .performance-star-rating {
+    display: flex;
+    justify-content: center;
+    margin: 14px 0;
+  }
+  
+  .performance-star {
+    cursor: pointer;
+    color: #FFD700;
+    font-size: 22px;
+    margin: 0 4px;
+    transition: transform 0.2s ease;
+  }
+  
+  .performance-star:hover {
+    transform: scale(1.25);
+  }
+  
+  .performance-save-rating-btn {
+    background-color: #004838;
+    color: white;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .performance-save-rating-btn:hover {
+    background-color: #003c2f;
+  }
+  
+  .performance-save-rating-btn:active {
+    transform: scale(0.97);
+  }

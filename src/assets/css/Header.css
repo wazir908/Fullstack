@@ -1,0 +1,334 @@
+.app-header {
+    display: flex;
+    margin-left: 230px; /* Adjusting margin based on sidebar width */
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border-radius: 20px;
+    background: linear-gradient(90deg, #01604B, #00362b);
+    color: white;
+  }
+  
+  .header-left h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+  
+  .header-left p {
+    margin: 0;
+    font-size: 1rem;
+    opacity: 0.8;
+  }
+  
+  .header-right {
+    display: flex;
+    align-items: center;
+  }
+  
+  .search-form {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    border-radius: 5px;
+    background-color: #ffffff15;
+    padding: 5px 10px;
+  }
+  
+  .search-input {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    background-color: transparent;
+    color: white;
+    font-size: 1rem;
+    width: 200px;
+  }
+  
+  .search-button {
+    background-color: #007bff;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .search-dropdown {
+    position: absolute;
+    top: 40px; /* Adjust depending on your layout */
+    left: 0;
+    width: 200px;
+    background-color: #fff;
+    color: black;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+  }
+  
+  .search-dropdown ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .search-dropdown li {
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .search-dropdown li:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .notification-center {
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .notification-icon {
+    position: relative;
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
+  .notification-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: red;
+    color: white;
+    font-size: 0.75rem;
+    padding: 3px 7px;
+    border-radius: 50%;
+  }
+  
+  .notification-dropdown {
+    position: absolute;
+    top: 40px; /* Adjust depending on your layout */
+    right: 0;
+    width: 250px;
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+  }
+  
+  .notification-dropdown ul {
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+  }
+  
+  .notification-dropdown li {
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .notification-dropdown li:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .user-profile {
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .user-profile-button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  .notification-center {
+    position: relative;
+  }
+  
+  .notification-icon {
+    position: relative;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #ffffff;
+  }
+  
+  .notification-count {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    background: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    font-size: 0.7rem;
+    padding: 2px 6px;
+    border-radius: 999px;
+  }
+  
+  .notification-dropdown {
+    position: absolute;
+    right: 0;
+    top: 40px;
+    width: 320px;
+    max-height: 400px;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    overflow-y: auto;
+    z-index: 999;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  .notification-header {
+    padding: 12px 16px;
+    border-bottom: 1px solid #ddd;
+    background-color: #f9f9f9;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  .notification-dropdown ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .notification-item {
+    padding: 12px 16px;
+    border-bottom: 1px solid #eee;
+    transition: background 0.2s;
+  }
+  
+  .notification-item:hover {
+    background-color: #f5f5f5;
+  }
+  
+  .notification-item p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #444;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-6px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .notification-dropdown {
+    background: #fff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    width: 300px;
+    padding: 12px;
+    position: absolute;
+    right: 0;
+    top: 50px;
+    z-index: 999;
+    animation: dropdownFade 0.3s ease;
+  }
+  
+  .notification-header h3 {
+    margin: 0 0 10px 0;
+    font-size: 1rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 6px;
+  }
+  
+  .notification-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 8px;
+    border-bottom: 1px solid #f0f0f0;
+    animation: fadeInNotif 0.3s ease;
+  }
+  
+  .notification-item p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #333;
+    flex: 1;
+    padding-right: 10px;
+  }
+  
+  .notification-close {
+    background: none;
+    border: none;
+    font-size: 1.1rem;
+    color: #999;
+    cursor: pointer;
+    transition: color 0.2s ease;
+  }
+  
+  .notification-close:hover {
+    color: #e74c3c;
+  }
+  
+  .notification-empty {
+    padding: 16px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #777;
+  }
+  
+  @keyframes fadeInNotif {
+    from {
+      opacity: 0;
+      transform: translateY(5px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes dropdownFade {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+      .icons-container {
+        display: flex;
+        gap: 6px; /* Adjust the gap between icons */
+        align-items: center;
+      }
+      
+      .notification-icon, .user-profile-button, .settings-button, .logout-button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 1.6rem;
+        color: #ffffff; /* Change color based on your design */
+      }
+      
+      .notification-count {
+        position: absolute;
+        top: -20;
+        right: -30;
+        background: red;
+        color: white;
+        font-size: 0.6rem;
+        padding: 0.2rem 0.4rem;
+        border-radius: 50%;
+      }
+      

@@ -1,0 +1,129 @@
+/* Dashboard Container */
+.dashboard-container {
+    padding: 40px 20px;
+    color: #333;
+    min-height: 100vh;
+    max-width: 1400px;
+    width: 100%; /* Ensure full width */
+    box-sizing: border-box; /* Avoid layout shifts */
+    margin: 0 auto; /* Center the container */
+}
+
+/* Unique Heading Styles */
+.dashboard-title {
+    text-align: center;
+    font-size: 2.2rem;
+    color: #01604B; /* Primary color */
+    margin-bottom: 40px;
+    font-weight: 600;
+}
+
+.card-title {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: #fff;  /* Ensure the card title is visible */
+}
+
+.analytics-title {
+    color: #01604B;  /* Use primary color for section titles */
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.chart-title {
+    color: #01604B;  /* Use primary color for section titles */
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+/* Dashboard Cards */
+.dashboard-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 cards per row */
+    gap: 20px;
+    margin-bottom: 20px;
+    width: 100%; /* Ensure the cards fill the container */
+}
+
+/* Card Styles */
+.card {
+    background: linear-gradient(135deg, #01604B, #00362b);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #fff;  /* White text for contrast */
+    padding: 20px;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100px; /* Reduced height for smaller cards */
+    font-size: 0.7rem; /* Smaller font size for a more compact look */
+}
+
+/* Hover Effect */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Card Values */
+.card p {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 0;
+    color: #fff;  /* Ensure the card values are visible */
+    flex-grow: 1;
+}
+
+/* Analytics Section */
+.analytics-section {
+    margin-top: 40px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.analytics-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.analytics-section li {
+    font-size: 1rem;
+    margin-bottom: 12px;
+    color: #555;
+}
+
+.analytics-section li strong {
+    color: #01604B;
+    font-weight: 600;
+}
+
+.analytics-section li em {
+    font-style: italic;
+    color: #888;
+}
+
+/* Chart Section */
+.chart-section {
+    margin-top: 40px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.chart {
+    width: 100%;
+    height: 300px;
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #888;
+    font-size: 1rem;
+}
