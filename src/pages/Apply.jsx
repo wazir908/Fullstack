@@ -80,7 +80,7 @@ const Apply = () => {
 
       // Send the data to the backend
       const res = await axios.post(
-        `http://localhost:5000/api/recruitments/${jobId}/applicants`,
+        `https://crm-backend-8e1q.onrender.com/api/recruitments/${jobId}/applicants`,
         submission,
         { headers: { 'Content-Type': 'multipart/form-data' } }
       );

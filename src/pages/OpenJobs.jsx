@@ -7,7 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import '../assets/css/Recruitment.css';
 import '../assets/css/Openjobs.css';
 
-const socket = io('http://localhost:5000');
+const socket = io('https://crm-backend-8e1q.onrender.com');
 
 const OpenJobs = () => {
   const [jobs, setJobs] = useState([]);

@@ -14,7 +14,7 @@ export default function Header({ successMessage, deleteError }) {
 
   // Set up the socket connection on mount
   useEffect(() => {
-    socket.current = io('http://localhost:5000'); // Replace with your server URL
+    socket.current = io('https://crm-backend-8e1q.onrender.com'); // Replace with your server URL
 
     // Listen for notifications from the server
     socket.current.on('notification', (message) => {

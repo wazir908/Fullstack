@@ -16,7 +16,7 @@ export default function EmployeeForm({ onAdd }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await fetch('http://localhost:5000/api/employees', {
+    await fetch('https://crm-backend-8e1q.onrender.com/api/employees', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(form),

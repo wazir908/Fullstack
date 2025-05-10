@@ -15,7 +15,7 @@ export default function Performance() {
 
   const fetchEmployees = async () => {
     try {
-      const res = await fetch('http://localhost:5000/api/employees');
+      const res = await fetch('https://crm-backend-8e1q.onrender.com/api/employees');
       const data = await res.json();
       setEmployees(data);
 
@@ -50,7 +50,7 @@ export default function Performance() {
 
   const handleSave = async (id) => {
     try {
-      const res = await fetch(`http://localhost:5000/api/employees/${id}/rating`, {
+      const res = await fetch(`https://crm-backend-8e1q.onrender.com/api/employees/${id}/rating`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ performanceRating: ratings[id] }),

@@ -9,7 +9,7 @@ export default function Promotions() {
 
   const fetchPromotions = async () => {
     try {
-      const res = await fetch('http://localhost:5000/api/employees');
+      const res = await fetch('https://crm-backend-8e1q.onrender.com/api/employees');
       const data = await res.json();
       const now = new Date();
 

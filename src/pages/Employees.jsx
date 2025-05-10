@@ -20,7 +20,7 @@ export default function Employees() {
     const fetchEmployees = async () => {
       setLoading(true);
       try {
-        const res = await fetch('http://localhost:5000/api/employees');
+        const res = await fetch('https://crm-backend-8e1q.onrender.com/api/employees');
         const data = await res.json();
         setEmployees(data);
       } catch (err) {
@@ -38,7 +38,7 @@ export default function Employees() {
 
   const handleDelete = async (id) => {
     try {
-      await fetch(`http://localhost:5000/api/employees/${id}`, { method: 'DELETE' });
+      await fetch(`https://crm-backend-8e1q.onrender.com/api/employees/${id}`, { method: 'DELETE' });
       setEmployees(employees.filter(emp => emp._id !== id));
       setSelectedEmployee(null);
     } catch (err) {

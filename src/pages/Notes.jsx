@@ -23,7 +23,7 @@ export default function Notes() {
   const fetchEmployees = async () => {
     setIsLoading(true);
     try {
-      const res = await fetch('http://localhost:5000/api/employees');
+      const res = await fetch('https://crm-backend-8e1q.onrender.com/api/employees');
       const data = await res.json();
       setEmployees(data);
     } catch (error) {
@@ -37,7 +37,7 @@ export default function Notes() {
     if (!noteText.trim()) return;
 
     try {
-      const res = await fetch(`http://localhost:5000/api/employees/${selectedEmployeeId}/notes`, {
+      const res = await fetch(`https://crm-backend-8e1q.onrender.com/api/employees/${selectedEmployeeId}/notes`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ content: noteText }),

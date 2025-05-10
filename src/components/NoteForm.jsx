@@ -7,7 +7,7 @@ export default function NoteForm({ employeeId, onNoteAdded }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!note || !date) return;
-    await fetch(`http://localhost:5000/api/employees/${employeeId}/notes`, {
+    await fetch(`https://crm-backend-8e1q.onrender.com/api/employees/${employeeId}/notes`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ content: note, date }),
