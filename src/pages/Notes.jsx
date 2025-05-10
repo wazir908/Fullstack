@@ -101,15 +101,27 @@ export default function Notes() {
                 Add Note
               </button>
 
-              <h3 className="notes-title">Previous Notes:</h3>
-              <ul className="notes-list">
-                {notes.slice().reverse().map((note, index) => (
-                  <li key={index} className="note-item">
-                    <strong className="note-date">{new Date(note.date).toLocaleDateString()}</strong>: 
-                    <p className="note-content">{note.content}</p>
-                  </li>
-                ))}
-              </ul>
+              <div className="notes-section">
+                <h3 className="notes-title">Previous Notes:</h3>
+                <div className="notes-container">
+                  {notes.length > 0 ? (
+                    notes.slice().reverse().map((note, index) => (
+                      <div key={index} className="note-card">
+                        <div className="note-header">
+                          <strong className="note-date">
+                            {new Date(note.date).toLocaleDateString()}
+                          </strong>
+                        </div>
+                        <div className="note-content">
+                          <p>{note.content}</p>
+                        </div>
+                      </div>
+                    ))
+                  ) : (
+                    <p className="no-notes">No notes available</p>
+                  )}
+                </div>
+              </div>
             </>
           )}
         </div>

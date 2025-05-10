@@ -1,105 +1,176 @@
+/* General Page Styling */
 .notes-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px;
+  font-family: 'Poppins', sans-serif;
+  background-color: #fafafa;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Title Styling */
+.title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #2b2b2b;
+  margin-bottom: 30px;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+}
+
+/* Loading and Error States */
+.loading,
+.error {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #e74c3c;
+  padding: 15px;
+  background-color: #fff3f3;
+  border: 1px solid #f5c6cb;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+/* Form Container Styling */
+.note-form {
+  margin-top: 30px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Form Group Styling */
+.form-group {
+  margin-bottom: 20px;
+}
+
+/* Label Styling */
+label {
+  font-size: 1rem;
+  color: #333;
+  font-weight: 500;
+  display: block;
+  margin-bottom: 8px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Select and Textarea Styles */
+.select,
+.textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-family: 'Poppins', sans-serif;
+  transition: border-color 0.3s ease;
+}
+
+.select:focus,
+.textarea:focus {
+  border-color: #013e31;
+  outline: none;
+}
+
+/* Select Styling */
+.select {
+  height: 40px;
+  background-color: #f9f9f9;
+}
+
+/* Textarea Styling */
+.textarea {
+  height: 150px;
+  resize: none;
+  background-color: #f9f9f9;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Add Note Button Styling */
+.add-note-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #013e31;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.add-note-btn:hover {
+  background-color: #001c16;
+  transform: translateY(-2px);
+}
+
+/* Notes Section Styling */
+.notes-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #2b2b2b;
+  margin-top: 40px;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+}
+
+/* Notes List Styling */
+.notes-list {
+  margin-top: 20px;
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Individual Note Item Styling */
+.note-item {
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  font-family: 'Poppins', sans-serif;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.note-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.note-date {
+  font-weight: 600;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.note-content {
+  color: #333;
+  margin-top: 10px;
+  font-size: 1rem;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .notes-page {
     padding: 20px;
-    margin: 0 auto;
-    font-family: 'Poppins', sans-serif;
   }
-  
+
   .title {
     font-size: 2rem;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 20px;
-    font-family: 'Montserrat', sans-serif;
   }
-  
-  .loading,
-  .error {
-    text-align: center;
-    font-size: 1.2rem;
-    color: #ff0000;
-  }
-  
+
   .note-form {
-    margin-top: 20px;
+    padding: 15px;
   }
-  
-  .form-group {
-    margin-bottom: 16px;
-  }
-  
-  label {
-    font-size: 1rem;
-    color: #555;
-    display: block;
-    margin-bottom: 8px;
-    font-family: 'Montserrat', sans-serif;
-  }
-  
-  .select,
-  .textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
-    font-family: 'Poppins', sans-serif;
-  }
-  
-  .select {
-    height: 40px;
-  }
-  
-  .textarea {
-    height: 150px;
-    resize: none;
-  }
-  
+
   .add-note-btn {
-    width: 100%;
-    padding: 12px;
-    background-color: #013e31;
-    color: white;
-    font-size: 1rem;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
   }
-  
-  .add-note-btn:hover {
-    background-color: #001c16;
-  }
-  
+
   .notes-title {
     font-size: 1.5rem;
-    font-weight: bold;
-    color: #333;
-    margin-top: 30px;
-    font-family: 'Montserrat', sans-serif;
   }
-  
-  .notes-list {
-    margin-top: 20px;
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .note-item {
-    background-color: #f9f9f9;
-    padding: 15px;
-    border-radius: 5px;
-    margin-bottom: 15px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    font-family: 'Poppins', sans-serif;
-  }
-  
-  .note-date {
-    font-weight: bold;
-    color: #555;
-  }
-  
-  .note-content {
-    color: #333;
-    margin-top: 8px;
-  }
+}

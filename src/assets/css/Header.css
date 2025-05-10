@@ -26,62 +26,6 @@
     align-items: center;
   }
   
-  .search-form {
-    display: flex;
-    align-items: center;
-    margin-right: 20px;
-    border-radius: 5px;
-    background-color: #ffffff15;
-    padding: 5px 10px;
-  }
-  
-  .search-input {
-    padding: 5px 10px;
-    border: none;
-    border-radius: 5px;
-    outline: none;
-    background-color: transparent;
-    color: white;
-    font-size: 1rem;
-    width: 200px;
-  }
-  
-  .search-button {
-    background-color: #007bff;
-    color: white;
-    padding: 5px 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .search-dropdown {
-    position: absolute;
-    top: 40px; /* Adjust depending on your layout */
-    left: 0;
-    width: 200px;
-    background-color: #fff;
-    color: black;
-    border-radius: 5px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    z-index: 10;
-  }
-  
-  .search-dropdown ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .search-dropdown li {
-    padding: 10px;
-    cursor: pointer;
-  }
-  
-  .search-dropdown li:hover {
-    background-color: #f0f0f0;
-  }
-  
   .notification-center {
     margin-right: 20px;
     display: flex;

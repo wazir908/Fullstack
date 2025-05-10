@@ -7,7 +7,7 @@ export default function EmployeeForm({ onAdd }) {
     startDate: '',
     promotionDate: '',
     contact: '',
-    designation: '',
+    position: '', // Change 'designation' to 'position'
   });
 
   const handleChange = (e) => {
@@ -21,21 +21,56 @@ export default function EmployeeForm({ onAdd }) {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(form),
     });
-    setForm({ name: '', client: '', startDate: '', promotionDate: '', contact: '', designation: '' });
+    setForm({ name: '', client: '', startDate: '', promotionDate: '', contact: '', position: '' }); // Clear position
     onAdd();
   };
 
   return (
     <form className="form" onSubmit={handleSubmit}>
       <h2>Add New Employee</h2>
-      <input name="name" placeholder="Name" value={form.name} onChange={handleChange} required />
-      <input name="client" placeholder="Client" value={form.client} onChange={handleChange} required />
-      <input name="contact" placeholder="Contact" value={form.contact} onChange={handleChange} />
-      <input name="designation" placeholder="Designation" value={form.designation} onChange={handleChange} />
+      <input
+        name="name"
+        placeholder="Name"
+        value={form.name}
+        onChange={handleChange}
+        required
+      />
+      <input
+        name="client"
+        placeholder="Client"
+        value={form.client}
+        onChange={handleChange}
+        required
+      />
+      <input
+        name="contact"
+        placeholder="Contact"
+        value={form.contact}
+        onChange={handleChange}
+      />
+      <input
+        name="position" // Make sure this is 'position'
+        placeholder="Position"
+        value={form.position}
+        onChange={handleChange}
+        required
+      />
       <label>Start Date:</label>
-      <input type="date" name="startDate" value={form.startDate} onChange={handleChange} required />
+      <input
+        type="date"
+        name="startDate"
+        value={form.startDate}
+        onChange={handleChange}
+        required
+      />
       <label>Promotion Date:</label>
-      <input type="date" name="promotionDate" value={form.promotionDate} onChange={handleChange} required />
+      <input
+        type="date"
+        name="promotionDate"
+        value={form.promotionDate}
+        onChange={handleChange}
+        required
+      />
       <button type="submit">Add Employee</button>
     </form>
   );

@@ -13,11 +13,11 @@ export default function EmployeeCard({ employee, onNoteAdded, onDelete }) {
         </button>
       </div>
       <p><strong>Client:</strong> {employee.client}</p>
+      <p><strong>Position:</strong> {employee.position}</p> {/* Display position here */}
       <p><strong>Start Date:</strong> {new Date(employee.startDate).toLocaleDateString()}</p>
       <p className={new Date(employee.promotionDate) < new Date() ? 'overdue' : ''}>
         <strong>Promotion Discussion:</strong> {new Date(employee.promotionDate).toLocaleDateString()}
       </p>
-
 
       <div className="notes">
         <h4>Notes</h4>

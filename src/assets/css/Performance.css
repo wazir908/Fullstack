@@ -1,86 +1,144 @@
 .performance-container {
-    padding: 40px 20px;
+  padding: 2rem;
+  font-family: 'Inter', sans-serif;
+}
+
+.performance-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.performance-table {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.performance-row {
+  display: grid;
+  grid-template-columns: 2fr 2fr 1fr;
+  background: #fff;
+  padding: 1rem 1.5rem;
+  border: 1px solid #e1e4e8;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.performance-row:hover {
+  background-color: #f6f9fb;
+  transform: scale(1.01);
+}
+
+.emp-name,
+.emp-dept,
+.emp-rating {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #1c2b36;
+}
+
+/* ===== Modal Styles ===== */
+.performance-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.performance-modal {
+  background: white;
+  width: 90%;
+  max-width: 500px;
+  border-radius: 12px;
+  padding: 2rem;
+  position: relative;
+  animation: fadeInScale 0.3s ease;
+}
+
+.modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: #1c2b36;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.performance-star-rating {
+  display: flex;
+  gap: 6px;
+  margin: 1rem 0;
+}
+
+.performance-star {
+  font-size: 1.5rem;
+  color: #f5b301;
+  cursor: pointer;
+}
+
+.performance-save-rating-btn {
+  background: #1c2b36;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 8px;
+  border: none;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.performance-save-rating-btn:hover {
+  background-color: #16242d;
+}
+
+@keyframes fadeInScale {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
   }
-  
-  .performance-title {
-    font-size: 32px;
-    margin-bottom: 30px;
-    font-weight: 600;
-    color: #1f1f1f;
-    text-align: center;
+  to {
+    transform: scale(1);
+    opacity: 1;
   }
-  
-  .performance-employee-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    justify-content: center;
-  }
-  
-  .performance-employee-card {
-    background-color: #ffffff;
-    padding: 25px 20px;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-    width: 280px;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .performance-employee-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 16px 30px rgba(0, 0, 0, 0.08);
-  }
-  
-  .performance-employee-name {
-    font-size: 22px;
-    font-weight: 600;
-    margin-bottom: 6px;
-    color: #2d2d2d;
-  }
-  
-  .performance-employee-department,
-  .performance-employee-rating {
-    font-size: 14px;
-    color: #757575;
-    margin-bottom: 6px;
-  }
-  
-  .performance-star-rating {
-    display: flex;
-    justify-content: center;
-    margin: 14px 0;
-  }
-  
-  .performance-star {
-    cursor: pointer;
-    color: #FFD700;
-    font-size: 22px;
-    margin: 0 4px;
-    transition: transform 0.2s ease;
-  }
-  
-  .performance-star:hover {
-    transform: scale(1.25);
-  }
-  
-  .performance-save-rating-btn {
-    background-color: #004838;
-    color: white;
-    padding: 10px 16px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 15px;
-    font-weight: 500;
-    letter-spacing: 0.3px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-  }
-  
-  .performance-save-rating-btn:hover {
-    background-color: #003c2f;
-  }
-  
-  .performance-save-rating-btn:active {
-    transform: scale(0.97);
-  }
+}
+
+.performance-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.search-input {
+  padding: 0.8rem 1rem;
+  border-radius: 6px;
+  border: 1px solid #015845;
+  min-width: 200px;
+  flex: 1;
+}
+
+.sort-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.sort-btn {
+  padding: 0.5rem 0.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.sort-btn.active {
+  color: white;
+}

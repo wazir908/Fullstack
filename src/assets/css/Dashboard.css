@@ -2,6 +2,7 @@
 .dashboard-container {
     padding: 40px 20px;
     color: #333;
+    
     min-height: 100vh;
     max-width: 1400px;
     width: 100%; /* Ensure full width */
@@ -44,6 +45,8 @@
     gap: 20px;
     margin-bottom: 20px;
     width: 100%; /* Ensure the cards fill the container */
+        font-family: 'Montserrat', sans-serif;
+    font-weight: 700; /* Adjust the weight as needed */
 }
 
 /* Card Styles */
@@ -60,6 +63,7 @@
     justify-content: space-between;
     height: 100px; /* Reduced height for smaller cards */
     font-size: 0.7rem; /* Smaller font size for a more compact look */
+
 }
 
 /* Hover Effect */
@@ -98,33 +102,113 @@
 }
 
 .analytics-section li strong {
-    color: #01604B;
+    color: #ffffff;
     font-weight: 600;
 }
 
 .analytics-section li em {
     font-style: italic;
-    color: #888;
+    color: #eaeaea;
 }
+
+/* Add this to Dashboard.css */
 
 /* Chart Section */
 .chart-section {
-    margin-top: 40px;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  background: linear-gradient(90deg, #01604B, #00362b);
+  color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 1.5rem;
+  margin-top: 50px;
+  height: 400px; /* Adjust height based on your design needs */
+  
+}
+
+.chart-section:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+}
+
+.chart-section h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .chart {
-    width: 100%;
-    height: 300px;
-    background-color: #f1f1f1;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #888;
-    font-size: 1rem;
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
 
+
+
+/* Add this to Dashboard.css */
+
+.grid-dashboard {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 0.1rem;
+  margin-top: 2rem;
+}
+
+.analytics-section {
+  padding: 1.5rem;
+  color: #ffffff; /* All text will be white */
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.analytics-section:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+}
+
+.analytics-section h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.analytics-section ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+  color: #ffffff; /* Ensures list items are white */
+}
+
+.analytics-section li {
+  margin-bottom: 0.75rem;
+    color: #eaeaea;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 0.5rem;
+}
+
+.analytics-section li:last-child {
+  border-bottom: none;
+    color: #ffffff;
+}
+
+/* Card 1: Recent Notes - Green Gradient */
+.analytics-section:nth-child(1) {
+  background: linear-gradient(90deg, #01604B, #00362b);
+}
+
+/* Card 2: Recent Applicants - Blue Gradient */
+.analytics-section:nth-child(2) {
+  background: linear-gradient(90deg, #00362b, #01604B);
+}
+
+/* Card 3: Recent Job Openings - Purple Gradient */
+.analytics-section:nth-child(3) {
+  background: linear-gradient(90deg, #01604B, #00362b);
+}

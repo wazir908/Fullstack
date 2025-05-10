@@ -1,0 +1,175 @@
+/* recruitment.css */
+.recruitment-container {
+    padding: 2rem;
+    font-family: 'Segoe UI', sans-serif;
+  background-color: #fafafa;
+  }
+  
+  
+  .job-form,
+  .job-list,
+  .applicants-panel {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .job-form input,
+  .job-form textarea,
+  .job-form select {
+    width: 100%;
+    padding: 0.7rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  
+  .job-form button {
+    padding: 0.8rem 1.5rem;
+    background: #015845;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .job-list .job-card {
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .job-card h3 {
+    margin: 0;
+  }
+  
+  .status {
+    font-weight: bold;
+    padding: 0.2rem 0.5rem;
+    border-radius: 6px;
+  }
+  
+  .status.open {
+    background: #d1e7dd;
+    color: #013e31;
+  }
+  
+  .status.closed {
+    background: #f8d7da;
+    color: #842029;
+  }
+  
+  .job-card .danger {
+    background: #dc3545;
+    margin-left: 1rem;
+  }
+  
+  .applicant-card {
+    padding: 1rem;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+  }
+  .apply-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  .apply-form input {
+    display: block;
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+  }
+
+
+
+.job-list {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.job-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 1.5rem;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+  transition: 0.2s ease;
+}
+
+.job-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+}
+
+.job-card-header h3 {
+  margin: 0 0 0.5rem;
+}
+
+.job-card-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.job-card-footer button {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: #013e31;
+  color: #fff;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+
+.job-modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.job-modal-content {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 700px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.modal-job-details p {
+  margin: 8px 0;
+}
+
+.applicants-panel {
+  margin-top: 2rem;
+}
+
+.applicant-item {
+  background: #f8f8f8;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.close-btn {
+  margin-top: 2rem;
+  background: #015845;
+  color: white;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+

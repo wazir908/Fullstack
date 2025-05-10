@@ -1,70 +1,92 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom'; // For navigation after successful login
 
-const Login = () => {
+function Login({ setIsAuthenticated }) {
   const [email, setEmail] = useState('');
-  const [otp, setOtp] = useState('');
-  const [step, setStep] = useState(1);
-  const [loading, setLoading] = useState(false); // Loading state
-  const navigate = useNavigate(); // For redirect after login
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const [isRegistering, setIsRegistering] = useState(false);  // Toggle between login and register
 
-  const handleSendOtp = async () => {
-    if (!email) return alert('Please enter your email'); // Validate email
-    setLoading(true);
+  const handleRegister = async (e) => {
+    e.preventDefault();
+
     try {
-      await axios.post('http://localhost:5000/api/auth/send-otp', { email }, { withCredentials: true });
-      setStep(2);
-    } catch (err) {
-      alert('Failed to send OTP');
-    } finally {
-      setLoading(false);
+      const response = await axios.post('http://localhost:5000/api/auth/register', {
+        email, 
+        password,  // Send password as plain text (we'll hash it in backend)
+      });
+
+      // If registration is successful, show a success message or do something else
+      alert('Registration successful! You can now log in.');
+      setIsRegistering(false);  // Switch to login view
+      setError('');
+    } catch (error) {
+      setError('Registration failed, please try again.');
     }
   };
 
-  const handleVerifyOtp = async () => {
-    if (!otp) return alert('Please enter the OTP'); // Validate OTP
-    setLoading(true);
+  const handleLogin = async (e) => {
+    e.preventDefault();
+
     try {
-      await axios.post('http://localhost:5000/api/auth/verify-otp', { otp }, { withCredentials: true });
-      navigate('/'); // Use navigate for redirection
-    } catch (err) {
-      alert('Invalid OTP');
-    } finally {
-      setLoading(false);
+      const response = await axios.post('http://localhost:5000/api/auth/login', {
+        email,  // Send email as 'email'
+        password,  // Send password as 'password'
+      });
+
+      // If login is successful, store token in localStorage
+      localStorage.setItem('authToken', response.data.token);
+      setIsAuthenticated(true);
+      setError('');  // Clear any previous error messages
+    } catch (error) {
+      setError('Invalid email or password');
     }
   };
 
   return (
     <div className="login-container">
-      <h2>Login</h2>
-      {step === 1 ? (
-        <>
+      <h2>{isRegistering ? 'Register' : 'Login'}</h2>
+
+      {error && <div className="error">{error}</div>}
+
+      <form onSubmit={isRegistering ? handleRegister : handleLogin}>
+        <div>
+          <label>Email</label>
           <input
-            value={email}
-            onChange={e => setEmail(e.target.value)}
-            placeholder="Enter email"
             type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
           />
-          <button onClick={handleSendOtp} disabled={loading}>
-            {loading ? 'Sending OTP...' : 'Send OTP'}
-          </button>
-        </>
-      ) : (
-        <>
+        </div>
+
+        <div>
+          <label>Password</label>
           <input
-            value={otp}
-            onChange={e => setOtp(e.target.value)}
-            placeholder="Enter OTP"
-            type="text"
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
           />
-          <button onClick={handleVerifyOtp} disabled={loading}>
-            {loading ? 'Verifying OTP...' : 'Verify OTP'}
-          </button>
-        </>
-      )}
+        </div>
+
+        <button type="submit">{isRegistering ? 'Register' : 'Login'}</button>
+      </form>
+
+      {/* Toggle between Register and Login */}
+      <div>
+        {isRegistering ? (
+          <p>
+            Already have an account? <a href="#" onClick={() => setIsRegistering(false)}>Login</a>
+          </p>
+        ) : (
+          <p>
+            Don't have an account? <a href="#" onClick={() => setIsRegistering(true)}>Register</a>
+          </p>
+        )}
+      </div>
     </div>
   );
-};
+}
 
 export default Login;

@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
-h1, h2 {
+h1, h2, h3 {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700; /* Adjust the weight as needed */
   }
@@ -9,3 +9,18 @@ h1, h2 {
     font-family: 'Poppins', sans-serif;
     font-weight: 400; /* Regular weight */
   }
+
+
+/* Optional: styling for ul and li elements if you need */
+ul, li {
+  font-family: 'Poppins', sans-serif; /* Ensure Poppins for list elements */
+  font-weight: 400; /* Regular weight */
+  line-height: 1.5; /* Optional: makes the list more readable */
+}
+
+/* Paragraphs and other text elements */
+p {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400; /* Regular weight */
+  line-height: 1.5;
+}
