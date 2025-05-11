@@ -86,7 +86,7 @@ const Apply = () => {
       );
 
       alert('Application submitted successfully!');
-      setResumePreview(`http://localhost:5000/${res.data.applicant.resume}`);
+      setResumePreview(`https://crm-backend-8e1q.onrender.com/${res.data.applicant.resume}`);
 
       // Reset form after submission
       setFormData({

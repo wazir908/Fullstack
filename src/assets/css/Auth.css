@@ -1,0 +1,122 @@
+/* ========== Main Container ========== */
+.login-page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+ .login-page-right-panel h2 {
+    color: #ffffff;
+}
+
+/* ========== Auth Wrapper ========== */
+.login-page-wrapper {
+  position: relative;
+  width: 1000px; 
+  height: 600px; 
+  overflow: hidden;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.3);
+  display: flex;
+}
+
+/* ========== Panels ========== */
+.login-page-left-panel,
+.login-page-right-panel {
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  transition: all 0.5s ease;
+}
+
+/* ========== Form Containers ========== */
+.login-page-form-container {
+  padding: 60px 40px;
+}
+
+.login-page-left-panel {
+  left: 0;
+}
+
+.login-page-right-panel {
+  right: 0;
+  background: linear-gradient(90deg, #01604B, #00362b);
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ========== Animation Classes ========== */
+.login-page-wrapper.login-page-signup-active .login-page-left-panel {
+  transform: translateX(100%);
+}
+
+.login-page-wrapper.login-page-signup-active .login-page-right-panel {
+  transform: translateX(-100%);
+}
+
+/* ========== Button Styling ========== */
+.login-page-action-btn {
+  background-color: #00362b;
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  margin-top: 25px;
+  font-size: 16px;
+}
+
+.login-page-action-btn:hover {
+  background-color: #024e42;
+}
+
+/* ========== Input Fields ========== */
+.login-page-input {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 2px solid #e0e0e0;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+.login-page-input:focus {
+  border-color: #01604B;
+  outline: none;
+}
+
+/* ========== Headings & Text ========== */
+.login-page-title {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.login-page-description {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+/* ========== Transition Animation ========== */
+.login-page-wrapper.login-page-signup-active .login-page-right-panel .login-page-title {
+  animation: login-page-fadeIn 0.4s ease-in-out;
+}
+
+@keyframes login-page-fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

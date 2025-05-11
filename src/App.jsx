@@ -1,11 +1,5 @@
-// App.js
 import React, { useState } from 'react';
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  useLocation,
-} from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Sidebar from './components/Sidebar';
 import Dashboard from './pages/Dashboard';
 import Employees from './pages/Employees';
@@ -16,63 +10,95 @@ import Header from './components/Header';
 import './App.css';
 import Recruitment from './pages/Recruitment';
 import Apply from './pages/Apply';
-import Login from './pages/Login';
 import OpenJobs from './pages/OpenJobs';
-
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import NotificationComponent from './components/NotificationBell';
+import Auth from './pages/auth/Login';
 
-function AppContent() {
-  const [notifications, setNotifications] = useState([]);
-  const location = useLocation();
-
-  // 🔍 Pages that should NOT use the full layout (public view)
-  const isPublicPage = location.pathname.startsWith('/apply');
-
+function PrivateLayout({ children, notifications, setNotifications }) {
   return (
     <div className="app-layout">
-      {!isPublicPage && <Header />}
-      {!isPublicPage && (
-        <NotificationComponent
-          notifications={notifications}
-          setNotifications={setNotifications}
-        />
-      )}
-
+      <Header />
+      <NotificationComponent
+        notifications={notifications}
+        setNotifications={setNotifications}
+      />
       <ToastContainer position="top-right" autoClose={5000} hideProgressBar={false} />
-
       <div className="app-content">
-        {!isPublicPage && <Sidebar />}
-
+        <Sidebar />
         <div className="main-content">
-          <Routes>
-            <Route path="/" element={<Dashboard />} />
-            <Route path="/employees" element={<Employees />} />
-            <Route path="/promotions" element={<Promotions />} />
-            <Route path="/notes" element={<Notes />} />
-            <Route path="/performance" element={<Performance />} />
-
-            <Route
-              path="/recruitment"
-              element={<Recruitment setNotifications={setNotifications} />}
-            />
-            <Route path="/openjobs" element={<OpenJobs />} />
-
-            {/* 🟢 Public Page: No header/sidebar */}
-            <Route path="/apply/:jobId" element={<Apply />} />
-            <Route path="/login" element={<Login />} />
-          </Routes>
+          {children}
         </div>
       </div>
     </div>
   );
 }
 
+function PublicLayout({ children }) {
+  return (
+    <div className="public-layout">
+      {children}
+    </div>
+  );
+}
+
 function App() {
+  const [notifications, setNotifications] = useState([]);
+
   return (
     <Router>
-      <AppContent />
+      <Routes>
+        {/* Public Routes */}
+        <Route path="/apply/:jobId" element={
+          <PublicLayout>
+            <Apply />
+          </PublicLayout>
+        } />
+        
+        <Route path="/login" element={
+          <PublicLayout>
+            <Auth />
+          </PublicLayout>
+        } />
+
+        {/* Private Routes */}
+        <Route path="/" element={
+          <PrivateLayout notifications={notifications} setNotifications={setNotifications}>
+            <Dashboard />
+          </PrivateLayout>
+        } />
+        <Route path="/employees" element={
+          <PrivateLayout notifications={notifications} setNotifications={setNotifications}>
+            <Employees />
+          </PrivateLayout>
+        } />
+        <Route path="/promotions" element={
+          <PrivateLayout notifications={notifications} setNotifications={setNotifications}>
+            <Promotions />
+          </PrivateLayout>
+        } />
+        <Route path="/notes" element={
+          <PrivateLayout notifications={notifications} setNotifications={setNotifications}>
+            <Notes />
+          </PrivateLayout>
+        } />
+        <Route path="/performance" element={
+          <PrivateLayout notifications={notifications} setNotifications={setNotifications}>
+            <Performance />
+          </PrivateLayout>
+        } />
+        <Route path="/recruitment" element={
+          <PrivateLayout notifications={notifications} setNotifications={setNotifications}>
+            <Recruitment />
+          </PrivateLayout>
+        } />
+        <Route path="/openjobs" element={
+          <PrivateLayout notifications={notifications} setNotifications={setNotifications}>
+            <OpenJobs />
+          </PrivateLayout>
+        } />
+      </Routes>
     </Router>
   );
 }

@@ -24,3 +24,5 @@ p {
   font-weight: 400; /* Regular weight */
   line-height: 1.5;
 }
+
+@import "tailwindcss";
